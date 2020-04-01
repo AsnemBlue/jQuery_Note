@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+table{margin:0 auto;}
+td{width: 200px; height:200px; background-color:blue;}
+div{text-align: center;}
+.tdClick{background-color:red;}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var ddukIdx = parseInt(Math.random()*9);
+		$('#msgans').html(ddukIdx);
+		$('td').on('click',function(){
+			$('td').removeClass('tdClick');
+			if(Number($(this).attr('id')) == ddukIdx){
+				$('#msg').html('맞춤');
+				$(this).css('background-image','url("dduk.jpg")').css('background-size','100%');
+				$('td').off();
+			}else{
+				$('#msg').html('틀림');
+				$(this).addClass('tdClick'); 
+			}
+			
+		});
+	});
+</script>
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td id="0"></td>
+			<td id="1"></td>
+			<td id="2"></td>
+		</tr>
+		<tr>
+			<td id="3"></td>
+			<td id="4"></td>
+			<td id="5"></td>
+		</tr>   
+		<tr>    
+			<td id="6"></td>
+			<td id="7"></td>
+			<td id="8"></td>
+		</tr>
+	</table>
+	
+	<div id="msgans"></div>
+	<div id="msg"></div>
+	
+</body>
+</html>

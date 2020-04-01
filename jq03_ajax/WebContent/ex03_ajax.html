@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('button').click(function(){
+			var mId = $('#mId').val();
+			$.ajax({
+				//객체가 들어감. 객체 속성에있는 것들은-
+				//url: 요청경로
+				//data:요청파라미터와 파라미터 값
+				//datatype:html/json/... 요청 경로로 실행한 결과의 타입
+				//success : 요청경로로 실행한 응답이 성공하였을 때 수행할 콜백 함수
+				//error:요청 경로로 실행한 응답이 실패하였을 때 수행할 골백함수
+				//type : get/post
+				url : 'mIdConfirm.jsp',
+				type : 'get',
+				data : 'mId='+mId,
+				datatype : 'html',
+				success : function(data){
+					$('#result').html(data);
+				},
+				error : function(code){	//사실 error는 안씀
+					alert(code.status);
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<p>아이디 <input type="text" name="mId" id="mId">
+		<button>중복체크</button></p>
+	<span id="result"></span>
+</body>
+</html>

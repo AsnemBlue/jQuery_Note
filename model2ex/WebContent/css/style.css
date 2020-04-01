@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+#content_form {height:700px;}
+table {border: 2px solid pink; width:90%; margin: 0px auto;}
+table tr { background-color: #FFE271; height:40px; }
+table tr:hover { background-color: orange;
+	cursor: pointer;
+}
+td,  th {text-align: center; padding:5px; }
+caption {font-size: 18px; padding:10px;}
+h2,  b{text-align: center; color:red;}
+a { text-decoration: none; color:black}
+ .left{text-align: left;}
+ .paging {text-align: center;}
+ input:not(.btn), #content_form textarea {
+	width: 90%;
+}
+                                          

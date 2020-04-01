@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('tr').click(function(){
+			var bid = $(this).children(0).eq(0).text();
+			alert('글번호는 '+bid);
+			location.href="";
+		});
+	});
+</script>
+</head>
+<body>
+	<table>
+		<tr><th>글번호</th><th>제목</th><th>글쓴이</th><th>조회수</th></tr>
+		<tr><td>5</td><td>제목5</td><td>길동이</td><td>10</td></tr>
+		<tr><td>4</td><td>제목4</td><td>이동이</td><td>15</td></tr>
+		<tr><td>3</td><td>제목3</td><td>박동이</td><td>1</td></tr>
+		<tr><td>2</td><td>제목2</td><td>김동이</td><td>100</td></tr>
+		<tr><td>1</td><td>제목1</td><td>소동이</td><td>10</td></tr>
+	</table>
+</body>
+</html>

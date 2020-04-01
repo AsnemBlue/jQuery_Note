@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var clickCountH1 = 0;
+		var clickCountH2 = 0;
+		$('#h1').click(function(){
+			clickCountH1++;
+			if(clickCountH1>=6){
+				$(this).off();
+			}else{
+				$(this).prepend(' ♥ ');
+				$(this).append(' ♥ ');
+			}
+		});
+		$('#h2').click(function(){
+			clickCountH2++;
+			if(clickCountH2>=6){
+				$(this).off();
+			}else{
+				$(this).prepend(' ♥ ');
+				$(this).append(' ♥ ');
+			}
+		});
+		//1초에 한번씩 #h2클릭 이벤트 강제 발생
+		setInterval(function(){
+			$('h1').last().trigger('click');
+		},1000);
+	});
+</script>
+</head>
+<body>
+	<h1 id="h1">start1 : </h1>
+	<h1 id="h2">start2 : </h1>
+</body>
+</html>
